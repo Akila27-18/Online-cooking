@@ -1,0 +1,475 @@
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 5%;
+    gap: 3rem;
+    background-color: #dceaf3;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    padding: 2rem;
+    background-color: #e6f7e6; /* Light green background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.hero-content p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.view-courses-btn {
+    margin-top: 30px;
+    background-color: #d9534f; /* Red color */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.view-courses-btn a {
+    color: white; /* Ensure text color remains white */
+    text-decoration: none; /* Remove underline from link */
+}
+
+.view-courses-btn:hover {
+    background-color: #c9302c;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* About Content Section */
+.about-content {
+    text-align: center;
+    margin: 3rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #d9534f;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.about-content p {
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    font-size: larger;
+    color:black;
+    line-height: 2.4;
+    line-height: 2.4;
+    font-weight: 700;
+}
+
+.our-story {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.story-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-left: 30px;
+    
+
+    /* --- NEW CSS for background image --- */
+    background-image: url('../image/Rectangle 26.png');
+    background-size: cover; /* This makes the image cover the entire container */
+    background-position: center; /* This centers the image within the container */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 4rem 2rem; /* Add some padding to give the text space */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+
+.story-text-card {
+    /* To make the text readable over the background image, give it a background */
+    background-color: black; /* A semi-transparent white background */
+    backdrop-filter: blur(5px); /* Add a subtle blur effect for better readability */
+    padding: 2rem;
+    border-radius: 10px;
+    flex: 2;
+    max-width: 600px;
+    text-align: left;
+    color: #fff;
+}
+/* --- Media Query for Mobile and Tablet Devices --- */
+@media (max-width: 768px) {
+    /* Hero Section adjustments */
+    .hero-section {
+        flex-direction: column; /* Stack the items vertically */
+        padding: 30px 5%;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Smaller font size for heading */
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem; /* Smaller font for paragraph */
+        line-height: 1.6;
+    }
+
+    .view-courses-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* About Section adjustments */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .about-content p {
+        font-size: 1rem; /* Smaller font for about paragraphs */
+        line-height: 1.8;
+    }
+
+    /* Our Story Section adjustments */
+    .story-container {
+        flex-direction: column; /* Stack items vertically */
+        padding: 2rem 1rem;
+        height: auto; /* Ensure height is flexible */
+    }
+
+    .story-text-card {
+        padding: 1.5rem;
+        max-width: 100%; /* Take full width on small screens */
+        font-size: 0.9rem;
+    }
+}
+/* --- What We Offers Section --- */
+.what-we-offers {
+    text-align: center;
+    padding: 50px 5%;
+    margin-bottom: 3rem;
+}
+
+.what-we-offers .section-title {
+    margin-bottom: 2rem;
+}
+
+.offers-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.offer-item {
+    margin-bottom: 2rem;
+    padding-left: 20px; /* Space for the custom bullet point */
+    position: relative;
+}
+
+.offer-item h3 {
+    display: inline;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #d9534f; /* Red color for the title */
+}
+
+/* Custom Red Bullet Point */
+.offer-item h3::before {
+    content: "•"; /* The bullet character */
+    color: #d9534f;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: -5px; /* Adjust vertical position */
+}
+
+.offer-item p {
+    display: inline;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-left: 10px; /* Space between title and paragraph */
+}
+/* --- What We Offers Section --- */
+/* (Previous styles remain the same) */
+
+.offer-item {
+    margin-bottom: 2rem;
+    padding-left: 20px;
+    position: relative;
+}
+
+.offer-item h3 {
+    display: inline;
+    font-size: 1.5rem;
+    font-weight: 700; /* This already makes the heading bold */
+    color: #d9534f;
+}
+
+.offer-item p {
+    display: inline;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-left: 10px;
+    font-weight: 700; /* NEW: This makes the paragraph bold */
+}
+
+/* (Rest of the styles remain the same) */
+/* --- Media Query for Mobile and Tablet Devices --- */
+@media (max-width: 768px) {
+    .what-we-offers {
+        padding: 30px 5%;
+    }
+
+    .what-we-offers .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .offer-item {
+        margin-bottom: 1.5rem;
+        padding-left: 15px;
+    }
+
+    .offer-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .offer-item h3::before {
+        font-size: 1.8rem;
+    }
+
+    .offer-item p {
+        font-size: 1rem;
+        margin-left: 5px;
+    }
+}
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+/* --- Media Query for smaller screens --- */
+@media (max-width: 768px) {
+    .main-image {
+        /* You can set a max-height to ensure the image doesn't get too tall on mobile */
+        max-height: 250px; 
+        /* Or, you can adjust the object-fit if needed, though 'cover' is often best */
+        /* object-fit: contain; */
+    }
+}
+/* --- Our Values Section --- */
+.our-values {
+    text-align: center;
+    padding: 50px 5%;
+    margin-bottom: 3rem;
+}
+
+.our-values .section-title {
+    margin-bottom: 2rem;
+}
+
+.values-container {
+    background-image: url('../image/Group 46.png'); /* Set your background image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    position: relative; /* Needed for the pseudo-element overlay */
+}
+
+/* Optional: Add a dark overlay to make text more readable */
+.values-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark semi-transparent overlay */
+    border-radius: 10px;
+}
+
+.values-text-card {
+    background-color: black; /* Semi-transparent white background */
+    padding: 2.5rem;
+    border-radius: 10px;
+    max-width: 600px;
+    z-index: 1; /* Place above the overlay */
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.values-text-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.values-text-card li {
+    position: relative;
+    padding-left: 25px; /* Space for the bullet point */
+    margin-bottom: 1.5rem;
+}
+
+.values-text-card li::before {
+    content: "•";
+   
+    font-size: 2rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.values-text-card h3 {
+    display: inline;
+    font-size: 1.2rem;
+  
+    font-weight: 700;
+}
+
+.values-text-card p {
+    display: inline;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-left: 10px;
+  
+    font-weight: 400;
+}
+
+/* --- Media Query for Mobile and Tablet Devices --- */
+@media (max-width: 768px) {
+    .our-values {
+        padding: 30px 5%;
+    }
+    
+    .values-container {
+        padding: 2rem 1rem;
+        min-height: 400px;
+    }
+
+    .values-text-card {
+        padding: 1.5rem;
+    }
+
+    .values-text-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .values-text-card p {
+        font-size: 0.9rem;
+    }
+
+    .values-text-card li {
+        margin-bottom: 1rem;
+    }
+}
+/* * --- CTA Section Styling --- */ */
+.cta-section {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f8f5ef;
+}
+
+.cta-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.4;
+}
+
+.cta-button {
+    background-color: #d15d5d;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    margin-left:45%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #b74c4c;
+}
+/* * --- Media Query for smaller screens (e.g., Tablets and Mobiles) --- */ 
+@media (max-width: 768px) {
+    .cta-section {
+        margin: 30px 5%;
+        padding: 30px 5%;
+    }
+
+    .cta-heading {
+        font-size: 1.5rem; /* Reduce font size on smaller screens */
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 12px 30px; /* Adjust button padding */
+        font-size: 1rem;
+    }
+}

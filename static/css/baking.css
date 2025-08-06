@@ -1,0 +1,281 @@
+/* --- Promo Section --- */
+.promo-section {
+    position: relative;
+    background-image: url('../image/Rectangle 26.png'); /* Set your background image path */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 5%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for text readability */
+}
+
+.promo-content {
+    position: relative; /* Stacks above the overlay */
+    z-index: 2;
+    max-width: 600px;
+    text-align: left;
+    margin-right: 10px;
+    left: 100px;
+}
+
+.promo-heading {
+    font-size: 2.5rem;
+    color: rgb(92, 91, 91);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.promo-subheading {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.promo-details-container {
+    margin-bottom: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.detail-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+}
+
+.promo-fees {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.promo-fees p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.promo-fees p span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #d9534f;
+}
+
+.enroll-btn {
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.enroll-btn:hover {
+    background-color: #c9302c;
+}
+
+.chef-image-container {
+    position: relative;
+    z-index: 2;
+    border: 5px solid white;
+    border-radius: 50%; /* Create the circle shape */
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    margin-left: 50px;
+    background-color: #fff; /* Fallback color */
+}
+
+.chef-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+/* --- Styling for the SVG icons --- */
+.detail-item .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    stroke: #fff; /* Sets the color of the SVG lines/strokes to white */
+    stroke-width: 2;
+    fill: none;
+}
+
+/* --- Media Query for Mobile and Tablet Devices --- */
+@media (max-width: 992px) {
+    .promo-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 5%;
+    }
+
+    .promo-content {
+        margin-right: 0;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .promo-heading {
+        font-size: 2rem;
+    }
+
+    .promo-fees {
+        justify-content: center;
+    }
+    
+    .promo-fees p {
+        font-size: 1.2rem;
+    }
+    
+    .promo-fees p span {
+        font-size: 1.5rem;
+    }
+
+    .chef-image-container {
+        width: 250px;
+        height: 250px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .promo-fees {
+        flex-direction: column;
+    }
+}
+/* --- Key Features Section --- */
+.key-features {
+    background-color:#A7C957 ; /* Green background color from the image */
+    color: #fff;
+    padding: 70px; /* Reduced horizontal padding */
+    
+    /* --- MODIFIED STYLES for box layout --- */
+    max-width: 1000px;
+    height: 600px;
+    margin: 50px auto; /* Center the box horizontally */
+    border: 2px solid #A7C957; /* Add a solid border */
+    border-radius: 15px; /* Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+    gap: 7rem;
+    margin-top: 20px;
+    /* Removed max-width and margin from here, now controlled by .key-features */
+    text-align: center;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-item svg {
+    color: #fff;
+    width: 48px;
+    height: 48px;
+}
+
+.feature-item h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+/* --- Media Query for Mobile and Tablet Devices --- */
+@media (max-width: 768px) {
+    .key-features {
+        padding: 30px 5%;
+        margin: 30px 2%; /* Adjusted margin for mobile */
+        border-radius: 10px; /* Slightly smaller border-radius for mobile */
+    }
+
+    .features-container {
+        grid-template-columns: 1fr; /* Stack into a single column on small screens */
+        gap: 2rem;
+    }
+
+    .feature-item h1 {
+        font-size: 1rem;
+    }
+
+    .feature-item svg {
+        width: 40px;
+        height: 40px;
+    }
+}
+/* * --- CTA Section Styling --- */ */
+.cta-section {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f8f5ef;
+}
+
+.cta-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.4;
+}
+
+.cta-button {
+    background-color: #d15d5d;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    margin-left:45%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #b74c4c;
+}
+/* * --- Media Query for smaller screens (e.g., Tablets and Mobiles) --- */ 
+@media (max-width: 768px) {
+    .cta-section {
+        margin: 30px 5%;
+        padding: 30px 5%;
+    }
+
+    .cta-heading {
+        font-size: 1.5rem; /* Reduce font size on smaller screens */
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 12px 30px; /* Adjust button padding */
+        font-size: 1rem;
+    }
+}

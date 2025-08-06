@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% block title %}Courses | Kitchen{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #fffaf4;
+    }
+
+    header {
+        background-color: #fef1dc;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-weight: bold;
+        font-size: 22px;
+        color: #a23e3e;
+    }
+
+    nav a {
+        margin-left: 15px;
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+        gap: 30px;
+    }
+
+    .login-box {
+        background-color: #fff1e0;
+        padding: 30px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .login-box h2 {
+        background-color: #b3e46c;
+        color: #000;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    form label {
+        display: block;
+        text-align: left;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid #d88b8b;
+        margin-bottom: 10px;
+        box-shadow: 1px 1px 5px #ccc;
+    }
+
+    button {
+        background-color: #9acd32;
+        color: black;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background-color: #86bd24;
+    }
+
+    @media screen and (max-width: 600px) {
+        .login-box {
+            padding: 20px;
+        }
+
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            display: block;
+            margin: 5px 0;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<header>
+    <nav>
+        <a href="#"><i class="fa fa-home"></i> HOME</a>
+        <a href="#"><i class="fa fa-fingerprint"></i> LOGIN</a>
+        <a href="{{ url_for('register') }}"><i class="fa fa-user-plus"></i> Register</a>
+    </nav>
+</header>
+
+<main>
+    <!-- Login Form -->
+    <div class="login-box">
+        <h2>LOGIN</h2>
+        <form action="/login" method="post" onsubmit="return validateLogin()">
+            <label for="email">E MAIL</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="password">PASSWORD</label>
+            <input type="password" name="password" id="password" required>
+
+            <button type="submit">LOGIN</button>
+        </form>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div class="login-box">
+        <h2>Register</h2>
+        <form action="/register" method="post" onsubmit="return validateregister()">
+            <label for="register_email">E MAIL</label>
+            <input type="email" name="email" id="signup_email" required>
+
+            <label for="register_password">PASSWORD</label>
+            <input type="password" name="password" id="signup_password" required>
+
+            <label for="confirm">CONFIRM PASSWORD</label>
+            <input type="password" name="confirm" id="confirm" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function validateLogin() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        if (!email || !password) {
+            alert('Please fill in all fields.');
+            return false;
+        }
+        return true;
+    }
+
+    function validateregister() {
+        const password = document.getElementById('register_password').value;
+        const confirm = document.getElementById('confirm').value;
+
+        if (password !== confirm) {
+            alert('Passwords do not match!');
+            return false;
+        }
+        return true;
+    }
+</script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

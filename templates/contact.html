@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | kitchen{% endblock %}
+
+{% block extra_css %}
+<style>
+  main {
+    padding: 30px;
+  }
+  h2 {
+    text-align: center;
+  }
+  form {
+    background-color: #fff1e0;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: auto;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+  }
+  .buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .buttons button[type="submit"] {
+    background-color: #c94d4d;
+    color: white;
+  }
+  .buttons button[type="reset"] {
+    background-color: transparent;
+    border: 1px solid #c94d4d;
+    color: #c94d4d;
+  }
+  .captcha {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .captcha input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+  }
+  @media screen and (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      gap: 10px;
+    }
+    form {
+      width: 90%;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<main>
+  <h2>ACADEMY SUPPORT</h2>
+  <form action="/submit_ticket" method="post" enctype="multipart/form-data">
+    
+
+    <label>Requester*</label>
+    <input type="email" name="email" placeholder="Email" required>
+
+    <label>Subject*</label>
+    <input type="text" name="subject" placeholder="Subject" required>
+
+    <label>Description*</label>
+    <textarea name="description" placeholder="Write here..." required></textarea>
+
+    <label>Attach a file</label>
+    <input type="file" name="file">
+
+    <div class="captcha">
+      <input type="checkbox" required> I'm not a robot
+    </div>
+
+    <div class="buttons">
+      <button type="submit">Submit</button>
+      <button type="reset">Cancel</button>
+    </div>
+  </form>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.querySelector("form").addEventListener("submit", function (e) {
+    alert("Your ticket has been submitted!");
+  });
+</script>
+{% endblock %}

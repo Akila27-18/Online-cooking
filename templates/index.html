@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | kitchen{% endblock %}
+
+
+   {% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section my-5 d-lg-flex align-items-center justify-content-between gap-3">
+    <div class="col-lg-5 mb-4">
+        <img src="{{ url_for('static', filename='image/Group 6.png') }}"  class="img-fluid rounded-4 shadow">
+    </div>
+    <div class="col-lg-6 p-3 bg-light rounded-4 border-start border-success border-5 shadow">
+        <h2 class="fw-bold mb-3 text-uppercase">Take your cooking skills<br>to the next level with master chefs</h2>
+        <p>Culinary tips and tricks straight from the expert, on how to cook scrumptious, Instagram-ready, lip-smacking dishes that are clean, healthy, and energizing.</p>
+        <a href="{{ url_for('courses') }}" class="btn btn-danger mt-3">View Courses</a>
+    </div>
+</section>
+
+<!-- Featured Section -->
+<section class="container my-5">
+        <h3 class="fw-bold text-center mb-4">FEATURED COURSES</h3>
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card text-white text-center">
+                    <div class="card-bg rounded-4" id="gut-program-bg"></div>
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50 rounded-4">
+                        <h5 class="card-title fw-bold">THE GOOD GUT<br> PROGRAM</h5>
+                        <p class="card-text">In Just 4 Weeks, Say Goodbye To <br>Bloating, Constipation,<br> Inflammation & Acidity...</p>
+                        <p class="card-text fw-bold">Get 70% OFF<br>₹ 4999 <del class="text-light">₹ 1499</del></p>
+                        <a href="#" class="btn btn-danger mt-2">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card text-white text-center">
+                    <div class="card-bg rounded-4" id="look-good-bg"></div>
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50 rounded-4">
+                        <h5 class="card-title fw-bold">LOOK GOOD COURSE</h5>
+                        <p class="card-text">In Just 30 Days, Discover Time<br> Tested & Science Backed Insights,<br> Remedies And Recipes</p>
+                        <p class="card-text fw-bold">New Launch Offer | 88% OFF<br>₹ 42,995 <del class="text-light">₹ 4,999</del></p>
+                        <a href="#" class="btn btn-danger mt-2">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card text-white text-center">
+                    <div class="card-bg rounded-4" id="food-business-bg"></div>
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50 rounded-4">
+                        <h5 class="card-title fw-bold">Start Your Food<br> Business From Home</h5>
+                        <p class="card-text">Learn How To Start Your Food<br> Business From Home, And Run<br> A Successful Home</p>
+                        <p class="card-text fw-bold">New Launch Offer | 70% OFF<br>₹ 4999 <del class="text-light">₹ 1,499</del></p>
+                        <a href="#" class="btn btn-danger mt-2">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container my-5"  >
+        <h3 class="fw-bold text-center mb-4">ALL COURSES</h3>
+        <div class="row g-4 justify-content-center" style="text-wrap: wrap;padding: 5px;margin: 5px;">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card text-white text-center">
+                    <div class="card-bg rounded-4" id="immunity-bg"></div>
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50 rounded-4">
+                        <h5 class="card-title fw-bold">IMMUNITY BOOSTER<br> RECIPES</h5>
+                        <p class="card-text">Live Well And Boost Your<br> Immunity With Time-Tested<br> Immunity Booster Recipes <br>From The Expert In Indian Cuisine</p>
+                        <p class="card-text fw-bold">Limited Period Offer<br> - Get 40% OFF<br>₹ 4000 <del class="text-light">₹ 1,999</del></p>
+                        <a href="#" class="btn btn-danger mt-2">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card text-white text-center">
+                    <div class="card-bg rounded-4" id="garnishing-bg"></div>
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50 rounded-4">
+                        <h5 class="card-title fw-bold">GARNISHING & <br>PLATING COURSE</h5>
+                        <p class="card-text">Love Plating Your Dishes<br> Like An Expert? Take Professional <br>Cues From MasterChef Sanjeev <br> Kapoor To Excel In The Art Of <br>Food Presentation!</p>
+                        <p class="card-text fw-bold">Limited Period Offer - <br>Get 60% OFF<br>₹ 999 <del class="text-light">₹ 399</del></p>
+                        <a href="#" class="btn btn-danger mt-2">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card text-white text-center">
+                    <div class="card-bg rounded-4" id="cooking-home-bg"></div>
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50 rounded-4">
+                        <h5 class="card-title fw-bold">COOKING AT <br>RESTAURANT STYLE<br> HOME STYLE</h5>
+                        <p class="card-text">Cook Amazing Restaurant<br> Style Dishes And Change <br>Everyday Home Cooked Dishes <br>Into Exceptional Dishes Your <br>Family Will Love</p>
+                        <p class="card-text fw-bold">Get 90% OFF<br>₹ 6000 <del class="text-light">₹ 1,999</del></p>
+                        <a href="#" class="btn btn-danger mt-2">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card text-white text-center">
+                    <div class="card-bg rounded-4" id="vegetarian-bg"></div>
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50 rounded-4">
+                        <h5 class="card-title fw-bold">VEGETARIAN'S<br> DELIGHT</h5>
+                        <p class="card-text">Cook The Tastiest VEGETARIAN <br>Dishes Using Everyday Ingredients <br>For Your Loved Ones At Home.<br> A True Delight For A Vegetarian!</p>
+                        <p class="card-text fw-bold">Get 37% OFF<br>₹ 4000 <del class="text-light">₹ 2,499</del></p>
+                        <a href="#" class="btn btn-danger mt-2">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card text-white text-center">
+                    <div class="card-bg rounded-4" id="singles-cooking-bg"></div>
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50 rounded-4">
+                        <h5 class="card-title fw-bold">BASIC COOKING <br>FOR SINGLES</h5>
+                        <p class="card-text">Impress Friends And Save <br>Money By Making Amazing Food<br> On Your Own Like The<br> MasterChef.<br> From How To Use A Cooker</p>
+                        <p class="card-text fw-bold">Limited Period Offer -<br> Get 67% OFF<br>₹ 5999 <del class="text-light">₹ 1,999</del></p>
+                        <a href="#" class="btn btn-danger mt-2">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card text-white text-center">
+                    <div class="card-bg rounded-4" id="singles-cooking-bg"></div>
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-50 rounded-4">
+                        <h5 class="card-title fw-bold">INDIA'S FAVOURITES: <br>RESTAURANTS AND <br>HOME STYLE DISHES</h5>
+                        <p class="card-text">Impress Friends And Save <br>Money By Making Amazing Food<br> On Your Own Like The MasterChef.<br> From How To Use A Cooker</p>
+                        <p class="card-text fw-bold">Limited Period Offer -<br> Get 67% OFF<br>₹ 6000 <del class="text-light">₹ 1,999</del></p>
+                        <a href="#" class="btn btn-danger mt-2">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- image -->
+    <div class="image-text-container">
+   
+     <img src="{{ url_for('static', filename='image/Group 40.png') }}"  class="main-image">
+   
+</div>
+
+ <div class="faq-section">
+        <h1 class="faq-heading">FAQ's</h1>
+        <div class="faq-list">
+            
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="question-number">1.</span> How do I find a recipe on your website?
+                    <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.59 8.59L12 13.17L7.41 8.59L6 10L12 16L18 10L16.59 8.59Z" fill="currentColor"/>
+                    </svg>
+                </summary>
+                <div class="faq-answer">
+                    You can easily find a recipe by using the search bar at the top of the page. Simply type in the dish you're looking for, and we'll provide a list of relevant recipes. Alternatively, you can browse recipes by category (e.g., Quick Meals, Desserts, Vegan, etc.).
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="question-number">2.</span> Can I save my favorite recipes?
+                    <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.59 8.59L12 13.17L7.41 8.59L6 10L12 16L18 10L16.59 8.59Z" fill="currentColor"/>
+                    </svg>
+                </summary>
+                <div class="faq-answer">
+                    Yes, if you create an account, you can save your favorite recipes to your profile for easy access later.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="question-number">3.</span> How do I submit my own recipes?
+                    <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.59 8.59L12 13.17L7.41 8.59L6 10L12 16L18 10L16.59 8.59Z" fill="currentColor"/>
+                    </svg>
+                </summary>
+                <div class="faq-answer">
+                    We'd love to see your recipes! You can submit your recipes through the 'Submit Recipe' link in the footer.
+                </div>
+            </details>
+            
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="question-number">4.</span> Are the recipes suitable for beginners?
+                    <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.59 8.59L12 13.17L7.41 8.59L6 10L12 16L18 10L16.59 8.59Z" fill="currentColor"/>
+                    </svg>
+                </summary>
+                <div class="faq-answer">
+                    Yes, many of our recipes are designed with beginners in mind. We also have a dedicated section for simple, step-by-step recipes.
+                </div>
+            </details>
+            
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="question-number">5.</span> How do I know if a recipe is vegan, gluten-free, or dairy-free?
+                    <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.59 8.59L12 13.17L7.41 8.59L6 10L12 16L18 10L16.59 8.59Z" fill="currentColor"/>
+                    </svg>
+                </summary>
+                <div class="faq-answer">
+                    Every recipe page includes tags and dietary labels that specify if the dish is vegan, gluten-free, or dairy-free.
+                </div>
+            </details>
+
+        </div>
+    </div>
+
+     <div class="cta-section">
+        <h3 class="cta-heading">
+            Homemakers to busy executives, budding chefs to food entrepeneurs, grandparents to moms, health conscious people or foodies – there's a course for all.
+        </h3>
+        <button class="cta-button"><a href="{{ url_for('courses') }}"style="text-decoration: none;">VIEW COURSES</button></a>
+       
+    </div>
+{% endblock %}
+

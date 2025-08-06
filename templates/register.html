@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+{% block title %}Register | kitchen{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #fffaf4;
+    }
+
+    header {
+        background-color: #fef1dc;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-weight: bold;
+        font-size: 22px;
+        color: #a23e3e;
+    }
+
+    nav a {
+        margin-left: 15px;
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    .register-box {
+        background-color: #fff1e0;
+        padding: 30px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 450px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .register-box h2 {
+        background-color: #a7c957;
+        color: #000;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    form label {
+        display: block;
+        text-align: left;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid #d88b8b;
+        margin-bottom: 10px;
+        box-shadow: 1px 1px 5px #ccc;
+    }
+
+    button {
+        background-color: #a7c957;
+        color: black;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background-color: #91b347;
+    }
+
+    .message {
+        color: red;
+        margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .register-box {
+            padding: 20px;
+        }
+
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            display: block;
+            margin: 5px 0;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<header>
+  
+    <nav>
+        <a href="{{ url_for('home') }}"><i class="fa fa-home"></i> HOME</a>
+        <a href="{{ url_for('login') }}"><i class="fa fa-fingerprint"></i> LOGIN</a>
+        <a href="{{ url_for('register') }}"><i class="fa fa-user-plus"></i> REGISTER</a>
+    </nav>
+</header>
+
+<main>
+    <div class="register-box">
+        <h2>REGISTER</h2>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="message">{{ messages[0] }}</div>
+            {% endif %}
+        {% endwith %}
+
+        <form action="/register" method="post" onsubmit="return validateSignup()">
+            <label for="email">E MAIL</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="signup_password">PASSWORD</label>
+            <input type="password" name="password" id="signup_password" required>
+
+            <label for="confirm">CONFIRM PASSWORD</label>
+            <input type="password" name="confirm" id="confirm" required>
+
+            <button type="submit">REGISTER</button>
+        </form>
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function validateSignup() {
+        const password = document.getElementById('signup_password').value;
+        const confirm = document.getElementById('confirm').value;
+
+        if (password !== confirm) {
+            alert('Passwords do not match!');
+            return false;
+        }
+        return true;
+    }
+</script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,526 @@
+/* General styling */
+body {
+    font-family: 'Segoe UI', sans-serif;
+     background-color: #fff8f0; 
+    color: #333;
+  
+}
+body a{
+    text-decoration: none;
+    list-style-type: none;
+}
+h1, h2, h3 {
+    color: #2c2c2c; /* Darker shade for headings */
+}
+.hero-section {
+    max-width: 1140px; /* similar to container */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav .navbar-brand {
+        font-size: 18px;
+    }
+    section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ==================================== */
+/* General Card and Background Styling  */
+/* ==================================== */
+
+.course-card {
+    position: relative;
+    height: 450px; /* Set a fixed height for all cards */
+    overflow: hidden;
+    border: none;
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-size: cover;          /* Ensure the image covers the entire container */
+    background-position: center;     /* Center the image */
+    background-repeat: no-repeat;    /* Prevent the image from tiling */
+    
+    z-index: 0;                      /* Place the background behind the text overlay */
+    transition: transform 0.5s ease; /* Add a smooth transition for the hover effect */
+}
+
+/* Hover effect for a subtle zoom on the background image */
+.course-card:hover .card-bg {
+    transform: scale(1.05);
+}
+
+/* Ensure the text overlay is on top and has a dark background for readability */
+.card-img-overlay {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* This aligns content to the bottom */
+}
+
+/* Use a semi-transparent black background on the overlay */
+.bg-dark.bg-opacity-50 {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ==================================== */
+/* Individual Card Background Images    */
+/* ==================================== */
+
+#gut-program-bg {
+    background-image: url('../image/COURSES.png');
+}
+
+#look-good-bg {
+    background-image: url('../image/COURSES.png');
+}
+
+#food-business-bg {
+    background-image: url('../image/COURSES.png');
+}
+
+/* ==================================== */
+/* Media Queries for Responsiveness     */
+/* ==================================== */
+
+/* Adjust card height for smaller screens */
+@media (max-width: 767.98px) {
+    .course-card {
+        height: 350px;
+    }
+}
+/* ==================================== */
+/* General Card and Background Styling  */
+/* ==================================== */
+
+.course-card {
+    position: relative;
+    height: 450px; /* Set a fixed height for all cards */
+    overflow: hidden;
+    border: none;
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    z-index: 0;
+    transition: transform 0.5s ease;
+}
+
+.course-card:hover .card-bg {
+    transform: scale(1.05);
+}
+
+.card-img-overlay {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.bg-dark.bg-opacity-50 {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    text-wrap: wrap;
+    padding: 5px;
+    
+   
+}
+.card-text {
+    font-size: smaller;
+    text-wrap: wrap;
+    padding: 20px;
+    margin: 10px;
+
+}
+
+/* ==================================== */
+/* Individual Card Background Images    */
+/* ==================================== */
+
+
+/* All Courses */
+#immunity-bg { background-image: url('../image/COURSES.png'); }
+#garnishing-bg { background-image: url('../image/COURSES.png'); }
+#cooking-home-bg { background-image: url('../image/COURSES.png'); }
+#vegetarian-bg { background-image: url('../image/COURSES.png'); }
+#singles-cooking-bg { background-image: url('../image/COURSES.png'); }
+#india-favorites-bg { background-image: url('../image/COURSES.png'); }
+/* Make overlay fill the card and align content */
+.card-img-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    line-height: 1;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* or center for vertical centering */
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.4); /* optional: darken for readability */
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+.card-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    border-radius: 1rem; /* matches overlay */
+}
+/* ==================================== */
+/* Media Queries for Responsiveness     */
+/* ==================================== */
+@media (max-width: 767.98px) {
+    .course-card {
+        height: 350px;
+    }
+    .card-title {
+        font-size: 1.1rem;
+    }
+    .card-text {
+        font-size: 0.9rem;
+    }
+}
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+ .navbar .nav-link:hover {
+        color: black; 
+       text-decoration: underline;
+        background-color: #91dc36;
+        border-radius: 5px;
+        transition: all 2s;
+    }
+/* Reduce font size of navbar links */
+.navbar .nav-link {
+    font-size: 1.5rem !important;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+.navbar .dropdown-menu .dropdown-item {
+    font-size: 1rem;
+}
+.navbar-brand {
+    font-size: 1.2rem !important;
+}
+    .navbar .rounded-circle {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .navbar .rounded-circle:hover {
+        transform: scale(1.08);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+     .footer .rounded-circle {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .footer .rounded-circle:hover {
+        transform: scale(1.08);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+/* --- Media Query for smaller screens --- */
+@media (max-width: 768px) {
+    .main-image {
+        /* You can set a max-height to ensure the image doesn't get too tall on mobile */
+        max-height: 250px; 
+        /* Or, you can adjust the object-fit if needed, though 'cover' is often best */
+        /* object-fit: contain; */
+    }
+}
+/* --- FAQ Section Styling --- */
+.faq-section {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.faq-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #2c2c2c;
+}
+
+.faq-list {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.faq-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline:rgba(0, 0, 0, 0.05); /* Remove default focus outline */
+}
+
+.faq-item summary:hover {
+    background-color: #f9f9f9;
+}
+
+.faq-item[open] summary {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Styling for the question text */
+.faq-question {
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+
+.question-number {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: 15px;
+    color: #ff6347; /* A reddish color for the number */
+}
+
+.arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 20px 25px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    background-color: #fffaf0; /* A slightly different background color for the answer */
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* * --- CTA Section Styling --- */ */
+.cta-section {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f8f5ef;
+}
+
+.cta-heading {
+    border: 5px solid #f8f5ef;
+    font-size: 1.5rem;
+    font-weight: bold;
+    max-width: 900px;
+    margin: 0 auto 30px;
+    line-height: 1.5;
+    padding: 20px;
+    text-align: center;
+    color: #2c2c2c;
+}
+
+.cta-button {
+    background-color: #d15d5d;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    margin-left:45%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.cta-button a{
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(209, 93, 93, 0.5); /* Add a custom focus outline */
+    color: white; /* Ensure text color remains white on focus */
+}
+
+.cta-button:hover {
+    background-color: #97b74c;
+}
+/* --- Footer --- */
+.footer {
+    margin-top: 30px;
+    background-color: #d15d5d;
+    color: white;
+    padding: 30px;
+    position: relative;
+    font-size: small;
+    font-weight: normal;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    margin: 20px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+    line-height: 2;
+    font-size: 0.9rem;
+}
+
+.footer-logo-container {
+    flex: 1;
+}
+
+.footer-logo {
+    width: 200px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.chat-icon {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: #d15d5d;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+/* --- Media Query for smaller screens (e.g., Tablets and Mobiles) --- */
+@media (max-width: 768px) {
+    .cta-section {
+        margin: 30px 5%;
+        padding: 30px 5%;
+    }
+
+    .cta-heading {
+        font-size: 1.5rem; /* Reduce font size on smaller screens */
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 12px 30px; /* Adjust button padding */
+        font-size: 1rem;
+    }
+}
+/* --- Media Query for Footer Responsiveness (e.g., on Tablets and Phones) --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack the columns vertically */
+        align-items: center; /* Center the columns horizontally */
+        text-align: center; /* Center text within each column */
+    }
+
+    .footer-column {
+        margin: 0; /* Remove horizontal margin */
+        margin-bottom: 30px; /* Add vertical space between stacked columns */
+    }
+
+    .footer-column:last-child {
+        margin-bottom: 0; /* Remove extra space from the last column */
+    }
+
+    .footer-logo-container {
+        margin-bottom: 20px; /* Add space below the logo */
+    }
+
+    .footer-logo {
+        width: 150px; /* Adjust logo size for smaller screens */
+    }
+    
+    .footer-column h4 {
+        margin-bottom: 10px; /* Adjust heading spacing */
+    }
+
+    .social-links {
+        margin-top: 10px;
+    }
+
+    .social-links a {
+        font-size: 1.3rem; /* Slightly reduce social icon size */
+        margin: 0 8px; /* Adjust spacing between icons */
+    }
+
+    .chat-icon {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}

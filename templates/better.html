@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | kitchen{% endblock %}
+
+{% block extra_css %}
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/better.css') }}">
+{% endblock %}
+   {% block content %}
+<section class="promo-banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+        <h2>From Butter Chicken to Singaporean Noodles: Cook India's Favourite Dishes at Home</h2>
+        <p class="banner-subtitle">In just 90 days, master the art of cooking 140+ basic to advanced Restaurant and Home styled dishes with step by step guidance and recipes!</p>
+        <div class="offer-details">
+            <p class="offer-text">Limited Period Offer - Get 67% OFF</p>
+            <p class="price-text"><span>₹ 6000</span> ₹ 1,999</p>
+        </div>
+        <button class="enroll-btn-secondary">ENROLL NOW</button>
+    </div>
+</section>
+<section class="course-curriculum">
+    <h2 class="section-title">Course Curriculum</h2>
+    <div class="curriculum-container">
+        <div class="curriculum-overlay"></div>
+        <div class="curriculum-list-card">
+            <ul>
+                <li>Introduction: Restaurant style dishes</li>
+                <li>Master class with master chef</li>
+                <li>Restaurant style dishes: Accompaniments</li>
+                <li>Breads</li>
+                <li>Desserts</li>
+                <li>Main course-non veg</li>
+                <li>Main course-veg</li>
+                <li>Rice</li>
+                <li>Soup-veg</li>
+                <li>Starters non-veg</li>
+                <li>Soup non-veg</li>
+                <li>Starters veg</li>
+                <li>Bonus course: All about US Assessments</li>
+                <li>Thank you</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section class="sample-video-section">
+    <h2 class="section-title">OUR CLASS SAMPLE VIDEO</h2>
+    <div class="video-container">
+        <video controls poster="{{ url_for('static', filename='image/Noodles with beef and vegetables on black table.png') }}">
+           
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+<section class="recipe-section">
+    <div class="recipe-card">
+        <h2 class="recipe-title">Veg Hakka Noodles (Indian-Chinese)</h2>
+        
+        <div class="ingredients">
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>200g Hakka Noodles</li>
+                <li>2 Tbsp Oil</li>
+                <li>1 Tbsp Soy Sauce</li>
+                <li>1 Tsp Vinegar</li>
+                <li>&frac12; Tsp Chili Sauce</li>
+                <li>1 Tsp Garlic (Finely Chopped)</li>
+                <li>1 Onion (Sliced)</li>
+                <li>1 Cup Jullienned Veggies (Carrot, Bell Pepper, Cabbage, Beans)</li>
+                <li>Salt & Pepper</li>
+            </ul>
+        </div>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Boil Noodles, Rinse With Cold Water, Toss In A Bit Of Oil.</li>
+                <li>Heat Oil In A Wok, Saut&eacute; Garlic And Onions.</li>
+                <li>Add All Veggies And Stir-Fry On High Heat For 2-3 Mins.</li>
+                <li>Add Noodles, Soy Sauce, Vinegar, Chili Sauce, Salt & Pepper.</li>
+            </ol>
+        </div>
+    </div>
+</section>
+<section class="testimonials-section">
+    <div class="testimonial-card">
+        <div class="testimonial-image-container">
+            <!-- The image will be changed dynamically by JavaScript -->
+            <img id="testimonial-images" src="" alt="Testimonial photo" class="testimonial-images">
+        </div>
+        
+        <div class="testimonial-content">
+            <p id="testimonial-text" class="testimonial-text">
+                <!-- Text will be inserted here by JavaScript -->
+            </p>
+            <p id="testimonial-author" class="testimonial-author">
+                <!-- Author will be inserted here by JavaScript -->
+            </p>
+        </div>
+        
+        <div class="carousel-nav">
+            <button class="nav-btn prev-btn" onclick="showPrevTestimonial()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="nav-btn next-btn" onclick="showNextTestimonial()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+        </div>
+    </div>
+</section>
+<section class="key-features">
+    <div class="features-container">
+        
+        <div class="feature-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+            <h5>1 YEAR ACCESS TO EXCLUSIVE RECIPE VIDEOS, NOT AVAILABLE ON YOUTUBE</h5>
+        </div>
+
+        <div class="feature-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <h5>MORE THAN 140 DOWNLOADABLE SIGNATURE RECIPES FROM THE MASTER CHEF</h5>
+        </div>
+
+        <div class="feature-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="2" rx="1" ry="1"></rect></svg>
+            <h5>LEARN HOW TO COOK DISHES FROM BASIC TO ADVANCED RECIPES</h5>
+        </div>
+
+        <div class="feature-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <h5>WATCH VIDEOS UNLIMITED TIMES AND DOWNLOAD RECIPES PDFS</h5>
+        </div>
+        
+        <div class="feature-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            <h5>LEARN FROM ANYWHERE WITH ANY DEVICE-MOBILE, DESKTOP, OR LAPTOP</h5>
+        </div>
+        
+        <div class="feature-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 10 7 8"></polyline></svg>
+            <h5>COURSE COMPLETION CERTIFICATE</h5>
+        </div>
+
+    </div>
+</section>
+<div class="cta-section">
+        <h3 class="cta-heading">
+            Homemakers to busy executives, budding chefs to food entrepeneurs, grandparents to moms, health conscious people or foodies – there's a course for all.
+        </h3>
+        <button class="cta-button"><a href="{{ url_for('courses') }}"style="text-decoration: none;">VIEW COURSES</button></a>
+       
+    </div>
+
+   {% endblock %}
+   {% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
