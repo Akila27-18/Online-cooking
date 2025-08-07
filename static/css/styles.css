@@ -126,6 +126,11 @@ h1, h2, h3 {
     z-index: 0;
     transition: transform 0.5s ease;
 }
+.container .btn {
+    font-size: 0.85rem;
+    /* padding: 6px; */
+    border-radius: 10px;
+}
 
 .course-card:hover .card-bg {
     transform: scale(1.05);
@@ -304,12 +309,15 @@ h1, h2, h3 {
 .faq-item[open] summary {
     border-bottom: 1px solid #ddd;
 }
-
+.col-lg-6.border-success {
+    border-left: 25px solid #198754 !important;   /* Thick green left border */
+    border-right: 25px solid #198754 !important;  /* Thick green right border */
+}
 /* Styling for the question text */
 .faq-question {
     display: flex;
     align-items: center;
-    color: #333;
+    color: #ed6464;
 }
 
 .question-number {
@@ -346,7 +354,11 @@ h1, h2, h3 {
     padding: 80px 20px;
     background-color: #f8f5ef;
 }
-
+#btn-small{
+    font-size: 0.85rem !important;
+    padding: 4px !important;
+    border-radius: 4px !important;
+}
 .cta-heading {
     border: 5px solid #f8f5ef;
     font-size: 1.5rem;
@@ -363,9 +375,9 @@ h1, h2, h3 {
     background-color: #d15d5d;
     color: white;
     border: none;
-    padding: 15px 40px;
+    padding: 15px;
     margin-left:45%;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 5px;

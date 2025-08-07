@@ -1,7 +1,7 @@
 from flask import Flask, render_template,  request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 import os
-
+from werkzeug.security import generate_password_hash
 # ---------------------- Config ---------------------- #
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
@@ -19,6 +19,16 @@ class User(db.Model):
 
     def __repr__(self):
         return f"User('{self.email}')"
+    
+class Enrollment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), nullable=False)
+    email = db.Column(db.String(120), nullable=False)
+    course = db.Column(db.String(120), nullable=False)
+    payment_id = db.Column(db.String(120))  # Optional, for Razorpay payment ID
+
+    def __repr__(self):
+        return f"Enrollment('{self.name}', '{self.course}')"
 
 # ---------------------- Routes ---------------------- #
 @app.route('/')
@@ -99,7 +109,22 @@ def register():
             print("Register Error:", e)
 
     return render_template('register.html')
+@app.route('/enroll', methods=['GET', 'POST'])
+def enroll():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        course = request.form.get('course')
+        payment_id = request.form.get('razorpay_payment_id')  # Optional
 
+        # Save to database
+        enrollment = Enrollment(name=name, email=email, course=course, payment_id=payment_id)
+        db.session.add(enrollment)
+        db.session.commit()
+
+        flash("✅ Enrollment successful! Welcome, {}".format(name))
+        return redirect(url_for('home'))
+    return render_template('enroll.html')
 
 if __name__ == '__main__':
     with app.app_context():

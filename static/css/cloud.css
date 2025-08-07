@@ -207,7 +207,11 @@
     line-height: 1.4;
     text-transform: uppercase;
 }
-
+.btn.btn-small {
+    font-size: 0.85rem !important;
+    padding: 4px 16px !important;
+    border-radius: 4px !important;
+}
 /* --- Media Query for Mobile and Tablet Devices --- */
 @media (max-width: 768px) {
     .key-features {

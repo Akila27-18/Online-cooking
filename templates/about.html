@@ -15,6 +15,7 @@
                 Discover A Better Way Of Cooking Amazing Dishes With Recipes Specially Curated By The Most Celebrated Face In The Indian Cuisine.
             </p>
             <button class="view-courses-btn"><a href="{{ url_for('courses') }}"style="text-decoration: none;">VIEW COURSES</button></a>
+
         </div>
         <div class="hero-image">
             <img src="{{ url_for('static', filename='image/Group 24.png') }}" alt="A group of people in a cooking class">
@@ -52,14 +53,17 @@
     <div class="offers-container">
         <div class="offer-item">
             <h3>Tasty Recipes:</h3>
+            <br>
             <p>From quick weeknight dinners to indulgent desserts, our recipes cover every occasion and dietary preference. Each recipe is tested and designed to be easy to follow, so you can enjoy the process as much as the result!</p>
         </div>
         <div class="offer-item">
             <h3>Helpful Cooking Tips:</h3>
+            <br>
             <p>Our step-by-step guides, cooking hacks, and ingredient substitutions will help you master new techniques and cook with confidence.</p>
         </div>
         <div class="offer-item">
             <h3>Community of Food Lovers:</h3>
+            <br>
             <p>Join our vibrant community of home cooks, share your own recipes, leave reviews, and inspire others. We believe cooking is even more enjoyable when shared!</p>
         </div>
     </div>
@@ -98,6 +102,7 @@
             Homemakers to busy executives, budding chefs to food entrepeneurs, grandparents to moms, health conscious people or foodies – there's a course for all.
         </h3>
         <button class="cta-button"><a href="{{ url_for('courses') }}"style="text-decoration: none;">VIEW COURSES</button></a>
+
        
     </div>
     {% endblock %}

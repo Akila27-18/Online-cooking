@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block title %}Enroll Now | kitchen{% endblock %}
+
+{% block extra_css %}
+<style>
+    .enroll-container {
+        max-width: 500px;
+        margin: 40px auto;
+        background: #fff1e0;
+        padding: 32px 24px;
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    }
+    .enroll-container h2 {
+        background: #a7c957;
+        color: #222;
+        padding: 12px;
+        border-radius: 16px;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .enroll-container label {
+        display: block;
+        margin-top: 16px;
+        margin-bottom: 6px;
+        font-weight: 500;
+    }
+    .enroll-container input, .enroll-container select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #d88b8b;
+        margin-bottom: 12px;
+        box-shadow: 1px 1px 5px #eee;
+    }
+    .enroll-container button {
+        background: #a7c957;
+        color: #222;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        width: 100%;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    .enroll-container button:hover {
+        background: #91b347;
+    }
+    .payment-info {
+        background: #fef1dc;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 18px;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="enroll-container">
+    <h2>Enroll Now</h2>
+    <div class="payment-info">
+        <strong>Course Fee:</strong> ₹1999<br>
+        <strong>Secure Payment via Razorpay</strong>
+    </div>
+    <form id="enrollForm" method="POST" action="/enroll">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="course">Select Course</label>
+        <select name="course" id="course" required>
+            <option value="">Choose a course</option>
+            <option value="immunity">Immunity Booster Recipes</option>
+            <option value="baking">Baking</option>
+            <option value="cloudkitchen">Cloud Kitchen</option>
+        </select>
+
+        <button type="button" id="payBtn">Pay & Enroll</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Razorpay JS (test key for demo, replace with your live key in production) -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+document.getElementById('payBtn').onclick = function(e){
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var course = document.getElementById('course').value;
+
+    if(!name || !email || !course){
+        alert('Please fill all fields.');
+        return;
+    }
+
+    var options = {
+        "key": "rzp_test_YourTestKeyHere", // Replace with your Razorpay Key ID
+        "amount": 199900, // Amount in paise (₹1999)
+        "currency": "INR",
+        "name": "Flavour Theory",
+        "description": "Course Enrollment",
+        "handler": function (response){
+            // You can send response.razorpay_payment_id to your backend for verification
+            alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+            document.getElementById('enrollForm').submit();
+        },
+        "prefill": {
+            "name": name,
+            "email": email
+        },
+        "theme": {
+            "color": "#a7c957"
+        }
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+    e.preventDefault();
+}
+</script>
+{% endblock %}
